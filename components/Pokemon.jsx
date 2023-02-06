@@ -39,6 +39,25 @@ const Pokemon = () => {
     offset: 0,
   };
 
+  // colors
+  const styles = {
+    grass: "#9BCC50",
+    poison: "#B97FC9",
+    fire: "#FD7D24",
+    flying: "#3DC7EF",
+    water: "#4592C4",
+    bug: "#729F3F",
+    normal: "#A4ACAF",
+    electric: "#EED535",
+    ground: "#AB9842",
+    fairy: "#FDB9E9",
+    fighting: "#D56723",
+    psychic: "#F366B9",
+    rock: "#A38C21",
+    ghost: "#7B62A3",
+    steel: "#9EB7B8",
+  };
+
   const getPokemon = async () => {
     try {
       fetch("https://graphql-pokeapi.graphcdn.app/", {
@@ -76,15 +95,15 @@ const Pokemon = () => {
   };
 
   useEffect(() => {
-    getPokeType();
     getPokemon();
+    getPokeType();
   }, []);
 
   return (
     <div className="container mx-auto flex flex-wrap gap-20 rounded-sm py-24 justify-center justify-items-center">
       {pokemon.map((pokemon, index) => (
         <>
-          <PokeDetails key={index} pokemon={pokemon} pokeType={pokeType[pokemon.id]} />
+          <PokeDetails styles={styles} key={index} pokemon={pokemon} pokeType={pokeType[pokemon.id]} />
         </>
       ))}
     </div>
@@ -92,5 +111,3 @@ const Pokemon = () => {
 };
 
 export default Pokemon;
-
-async function getStaticProps() {}

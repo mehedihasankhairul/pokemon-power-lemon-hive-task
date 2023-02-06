@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Pokemon from "@/components/Pokemon";
-import logo from "@/images/pokemon-logo.png";
-// import background from "@/images/Background.png";
+import PikachuArrive from "@/components/PikachuArrive";
+import logo from "@/assets/images/pokemon-logo.png";
 
 import Image from "next/image";
 
@@ -15,6 +15,9 @@ export default function Home() {
             <Image src={logo} alt="Pokemon Logo" className="w-80 " />
           </div>
           <Pokemon />
+        </div>
+        <div className="">
+          <PikachuArrive />
         </div>
       </Layout>
     </>

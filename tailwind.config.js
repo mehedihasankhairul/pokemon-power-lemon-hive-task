@@ -11,8 +11,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'pokemonBg': "url('../images/Background.png')",
+        'pokemonBg': "url('../assets/images/Background.png')",
       }
+
     },
   },
   plugins: [],
