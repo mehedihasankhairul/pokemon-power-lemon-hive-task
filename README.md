@@ -23,6 +23,11 @@
 First, run the development server:
 
 ```bash
+npm install
+#or
+yarn 
+
+#then
 npm run dev
 # or
 yarn dev
