@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Lemon Hive Intern Test 
   # Pokemon Universe 
   # Pokemon Universe is a website that allows you to search for your favorite pokemon and see their stats and abilities.
@@ -16,7 +14,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
   # GraphQL
   # Swiperjs
   # Vercel
-  
+
+
 
 ## How to Run
 First, run the development server:
