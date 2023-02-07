@@ -10,7 +10,6 @@ const PokemonDetails = () => {
   const router = useRouter();
   const { name } = router.query;
   const [pokemonDetails, setPokemonDetails] = useState([]);
-  // console.log(pokemonDetails.name);
   const [isLoading, setIsLoading] = useState(true);
 
   const pokemonQuery = `query pokemon($name: String!) {
