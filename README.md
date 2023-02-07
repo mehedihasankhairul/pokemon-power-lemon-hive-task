@@ -10,11 +10,11 @@
 
 # technology used
 ```bash
-   Next.js
-   Tailwind CSS
-   GraphQL
-   Swiperjs
-   Vercel
+   * Next.js
+   * Tailwind CSS
+   * GraphQL
+   * Swiperjs
+   * Vercel
 ```
 
 
