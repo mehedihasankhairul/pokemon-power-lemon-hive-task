@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'pokemonBg': "url('../assets/images/Background.png')",
-      }
+        'brush': "url('../assets/images/Brush.png')",
+      },
 
     },
   },

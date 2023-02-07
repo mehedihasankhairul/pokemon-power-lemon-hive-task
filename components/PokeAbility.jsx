@@ -6,7 +6,7 @@ const PokeAbility = ({ pokemonDetails }) => {
   return (
     <div className="flex flex-col items-center w-full lg:w-96 p-3 ">
       <div className="flex flex-nowrap gap-3 font-semibold lg:text-[48px] md:text-[56px] text-[#257BC4] min-[320px] max-[639px]:text-[50px]">
-        <p> {name}</p>
+        <p className="first-letter:capitalize"> {name}</p>
         <p> #0{id}</p>
       </div>
       <div className="lg:w-[400] md:w-[240px]">

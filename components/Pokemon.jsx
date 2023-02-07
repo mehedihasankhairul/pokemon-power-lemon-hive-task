@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
-import PokeDetails from "./PokeDetails";
+import PokeDetails from "./PokeCards";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState([]);
   const [pokeType, setPokeType] = useState([]);
+  const [width, setWidth] = useState();
 
   const gqlQuery = `query pokemons($limit: Int, $offset: Int) {
   pokemons(limit: $limit, offset: $offset) {
@@ -99,13 +107,36 @@ const Pokemon = () => {
     getPokeType();
   }, []);
 
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  const isMobile = width <= 550;
+  console.log(isMobile);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div className="container mx-auto flex flex-wrap gap-20 rounded-sm py-24 justify-center justify-items-center">
-      {pokemon.map((pokemon, index) => (
-        <>
+      {isMobile ? (
+        <Swiper spaceBetween={140} slidesPerView={2} className="mySwiper" navigation>
+          {pokemon.map((pokemon, index) => (
+            <>
+              <SwiperSlide key={index}>
+                <PokeDetails styles={styles} key={index} pokemon={pokemon} pokeType={pokeType[pokemon.id]} />
+              </SwiperSlide>
+            </>
+          ))}
+        </Swiper>
+      ) : (
+        pokemon.map((pokemon, index) => (
           <PokeDetails styles={styles} key={index} pokemon={pokemon} pokeType={pokeType[pokemon.id]} />
-        </>
-      ))}
+        ))
+      )}
     </div>
   );
 };
